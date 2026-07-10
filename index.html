@@ -132,6 +132,14 @@
       max-width: 640px; margin-bottom: 36px;
     }
     .hero .lead strong { color: var(--text); font-weight: 600; }
+    .ethos {
+      font-family: 'Sora', sans-serif; font-weight: 600; font-style: italic;
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem); margin-bottom: 30px;
+      padding-left: 18px; border-left: 3px solid var(--accent-3);
+      background: linear-gradient(110deg, var(--accent-3), var(--accent));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      width: fit-content;
+    }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-bottom: 34px; }
     .hero-meta span { display: inline-flex; align-items: center; gap: 8px; color: var(--text-dim); font-size: 0.92rem; }
     .hero-meta svg { color: var(--accent); flex: none; }
@@ -174,7 +182,8 @@
 
     /* ---------- Expertise cards ---------- */
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+    @media (max-width: 980px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } }
     .card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 30px; position: relative; overflow: hidden;
@@ -199,6 +208,29 @@
       font-size: 0.8rem; color: var(--text-dim); background: rgba(255,255,255,0.04);
       border: 1px solid var(--border); padding: 4px 11px; border-radius: 999px;
     }
+
+    /* ---------- Selected work ---------- */
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 980px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .work-grid { grid-template-columns: 1fr; } }
+    .work-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 24px; transition: transform 0.25s, border-color 0.25s, background 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .work-card:hover { transform: translateY(-4px); border-color: rgba(167,139,250,0.35); background: var(--surface-hover); }
+    .work-card .cat {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent-2); margin-bottom: 10px;
+    }
+    .work-card h3 { font-size: 1.12rem; margin-bottom: 8px; line-height: 1.25; }
+    .work-card p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 16px; flex: 1; }
+    .work-card .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+    .work-card .tags li {
+      font-size: 0.74rem; color: var(--text-faint); background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border); padding: 3px 9px; border-radius: 999px;
+    }
+    .work-note { color: var(--text-faint); font-size: 0.9rem; margin-top: 30px; text-align: center; font-style: italic; }
 
     /* ---------- About ---------- */
     .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
@@ -270,6 +302,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
         <a href="https://www.linkedin.com/in/joe-ridenour/" target="_blank" rel="noopener" class="cta">Let's talk</a>
       </div>
@@ -281,7 +314,8 @@
     <div class="wrap">
       <div class="badge reveal"><span class="pulse"></span> 15+ years shipping software</div>
       <h1 class="reveal">Building experiences for<br /><span class="grad">mobile, web &amp; the living room.</span></h1>
-      <p class="lead reveal">I'm <strong>Joe Ridenour</strong>, a full-stack engineer and technology leader who's spent over fifteen years turning ideas into polished products &mdash; from native mobile apps to responsive web platforms to <strong>connected-TV</strong> experiences that reach the biggest screen in the house.</p>
+      <p class="lead reveal">I'm <strong>Joe Ridenour</strong>, a full-stack engineer and technology leader who's spent over fifteen years turning ideas into polished products &mdash; across <strong>mobile, web, TV, desktop, backend, and even the circuit board</strong>. From native apps and streaming platforms to cloud infrastructure and micro-electronics, I build the whole thing.</p>
+      <p class="ethos reveal">&ldquo;Bringing the average Joe's apps to life.&rdquo;</p>
       <div class="hero-meta reveal">
         <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg> Director of Technology · Mercury Intermedia</span>
         <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Spring Hill, Tennessee</span>
@@ -295,9 +329,9 @@
 
       <div class="stats">
         <div class="stat reveal"><div class="num">15+</div><div class="label">Years of experience</div></div>
-        <div class="stat reveal"><div class="num">3</div><div class="label">Platforms: mobile · web · TV</div></div>
-        <div class="stat reveal"><div class="num">∞</div><div class="label">Screens shipped to</div></div>
-        <div class="stat reveal"><div class="num">100%</div><div class="label">Focus on the details</div></div>
+        <div class="stat reveal"><div class="num">8+</div><div class="label">Platforms shipped to</div></div>
+        <div class="stat reveal"><div class="num">20+</div><div class="label">Products launched</div></div>
+        <div class="stat reveal"><div class="num" style="font-size:clamp(1.3rem,2.8vw,1.9rem);">Silicon&rarr;Cloud</div><div class="label">Full-stack range</div></div>
       </div>
     </div>
   </header>
@@ -305,8 +339,8 @@
   <!-- SKILLS BAND -->
   <div class="skills-band">
     <div class="marquee">
-      <span>iOS</span><span>Android</span><span>Swift</span><span>Kotlin</span><span>React</span><span>TypeScript</span><span>JavaScript</span><span>tvOS</span><span>Roku</span><span>Fire TV</span><span>Android TV</span><span>Node.js</span><span>React Native</span><span>UI / UX</span>
-      <span>iOS</span><span>Android</span><span>Swift</span><span>Kotlin</span><span>React</span><span>TypeScript</span><span>JavaScript</span><span>tvOS</span><span>Roku</span><span>Fire TV</span><span>Android TV</span><span>Node.js</span><span>React Native</span><span>UI / UX</span>
+      <span>iOS</span><span>Android</span><span>macOS</span><span>Swift</span><span>Kotlin</span><span>React</span><span>Angular</span><span>TypeScript</span><span>Node.js</span><span>Python</span><span>tvOS</span><span>Roku</span><span>Fire TV</span><span>Samsung</span><span>Xbox</span><span>WebRTC</span><span>Socket.IO</span><span>Stripe</span><span>Databases</span><span>Cloud &amp; CI/CD</span><span>Raspberry Pi</span><span>Micro-electronics</span>
+      <span>iOS</span><span>Android</span><span>macOS</span><span>Swift</span><span>Kotlin</span><span>React</span><span>Angular</span><span>TypeScript</span><span>Node.js</span><span>Python</span><span>tvOS</span><span>Roku</span><span>Fire TV</span><span>Samsung</span><span>Xbox</span><span>WebRTC</span><span>Socket.IO</span><span>Stripe</span><span>Databases</span><span>Cloud &amp; CI/CD</span><span>Raspberry Pi</span><span>Micro-electronics</span>
     </div>
   </div>
 
@@ -319,8 +353,9 @@
           <div class="sec-head reveal" style="margin-bottom:28px;">
             <h2>A generalist's range, a craftsman's care.</h2>
           </div>
-          <p class="reveal">Over the last decade and a half I've worked across the full spectrum of consumer software &mdash; the phone in your pocket, the browser on your desk, and the television in your living room. That breadth has taught me how to move fluidly between platforms while keeping one thing constant: <strong>a relentless focus on the experience.</strong></p>
-          <p class="reveal">I care about the parts users never see &mdash; clean architecture, thoughtful state management, performance &mdash; because those are exactly what make the parts they <em>do</em> see feel effortless. Whether it's a smooth 60fps animation on mobile or a snappy 10-foot interface navigated by remote, the goal is the same: software that just works.</p>
+          <p class="reveal">Over the last decade and a half I've worked across the full spectrum of software &mdash; the phone in your pocket, the browser on your desk, the television in your living room, the services in the cloud, and even the hardware on the bench. That breadth has taught me how to move fluidly between platforms while keeping one thing constant: <strong>a relentless focus on the experience.</strong></p>
+          <p class="reveal">The idea behind <strong>Joe's Apps</strong> has always been simple &mdash; <em>bringing the average Joe's apps to life.</em> Whatever the idea and whatever the platform, my job is to take it from a sketch to something real, shipped, and worth using.</p>
+          <p class="reveal">I care about the parts users never see &mdash; clean architecture, thoughtful data models, performance &mdash; because those are exactly what make the parts they <em>do</em> see feel effortless. Whether it's a smooth 60fps animation on mobile, a snappy 10-foot interface navigated by remote, or a resilient backend humming under load, the goal is the same: software that just works.</p>
           <p class="reveal">Today I serve as <strong>Director of Technology at Mercury Intermedia</strong>, where I lead engineering while staying hands-on across the full stack. A graduate of <strong>Middle Tennessee State University</strong> and based near Nashville, I enjoy the whole journey &mdash; from a rough concept to a shipped product &mdash; and I'm just as comfortable prototyping something new as I am hardening and scaling something mature.</p>
         </div>
         <div class="approach reveal">
@@ -339,29 +374,163 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="sec-tag">Expertise</span>
-        <h2>Three screens, one standard of quality.</h2>
-        <p>Fifteen years spread across the platforms people use every day.</p>
+        <h2>Full-stack, end to end &mdash; silicon to cloud.</h2>
+        <p>Fifteen years spanning the whole stack, from the circuit board to the data center.</p>
       </div>
       <div class="cards">
         <div class="card reveal">
           <div class="icon">📱</div>
-          <h3>Mobile</h3>
-          <p>Native and cross-platform apps built for performance, offline resilience, and the small interactions that make an app feel alive.</p>
-          <ul><li>iOS / Swift</li><li>Android / Kotlin</li><li>React Native</li><li>Offline-first</li></ul>
+          <h3>Mobile &amp; Desktop</h3>
+          <p>Native and cross-platform apps for phones, tablets, and the Mac &mdash; built for performance and the small interactions that make software feel alive.</p>
+          <ul><li>iOS / Swift</li><li>Android / Kotlin</li><li>macOS</li><li>React Native</li></ul>
         </div>
         <div class="card reveal">
           <div class="icon">🌐</div>
           <h3>Web</h3>
           <p>Responsive, accessible web applications &mdash; from marketing sites to complex single-page apps &mdash; built on modern, maintainable foundations.</p>
-          <ul><li>React</li><li>TypeScript</li><li>Node.js</li><li>Responsive UI</li></ul>
+          <ul><li>React</li><li>Angular</li><li>TypeScript</li><li>Responsive UI</li></ul>
         </div>
         <div class="card reveal">
           <div class="icon">📺</div>
-          <h3>Television</h3>
+          <h3>TV &amp; Streaming</h3>
           <p>Connected-TV and streaming experiences designed for the 10-foot view and remote-driven navigation across every major platform.</p>
-          <ul><li>tvOS</li><li>Roku</li><li>Fire TV</li><li>Android TV</li></ul>
+          <ul><li>tvOS</li><li>Roku</li><li>Fire TV</li><li>Samsung</li><li>Xbox</li></ul>
+        </div>
+        <div class="card reveal">
+          <div class="icon">⚙️</div>
+          <h3>Backend &amp; Data</h3>
+          <p>APIs, real-time systems, and data models that power the front end &mdash; designed to stay fast, correct, and maintainable as they grow.</p>
+          <ul><li>Node.js</li><li>Python</li><li>REST &amp; realtime</li><li>Databases</li></ul>
+        </div>
+        <div class="card reveal">
+          <div class="icon">☁️</div>
+          <h3>Infrastructure &amp; Cloud</h3>
+          <p>Cloud services, delivery pipelines, and platform architecture &mdash; built to scale, deploy reliably, and get software into users' hands.</p>
+          <ul><li>Cloud services</li><li>CI/CD</li><li>OTA delivery</li><li>Architecture</li></ul>
+        </div>
+        <div class="card reveal">
+          <div class="icon">🔌</div>
+          <h3>Hardware &amp; Micro-electronics</h3>
+          <p>Physical computing and embedded builds &mdash; from single-board computers and relays to on-device SDKs bridging software and the real world.</p>
+          <ul><li>Raspberry Pi</li><li>Relays &amp; sensors</li><li>On-device SDKs</li><li>IoT</li></ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work" style="padding-top:40px;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-tag">Selected Work</span>
+        <h2>Products I've helped bring to life.</h2>
+        <p>A sampling across streaming, media, commerce, enterprise tooling, and hardware. I can't go deep on the specifics, but here's the shape of it.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-card reveal">
+          <span class="cat">Streaming · Architecture</span>
+          <h3>FanDuel Sports Network</h3>
+          <p>Architected the entire platform end to end &mdash; cloud services, infrastructure, and client SDKs spanning Android, Apple, Roku, Samsung, Xbox, and web.</p>
+          <ul class="tags"><li>Multi-platform</li><li>Cloud</li><li>SDKs</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">TV · Video</span>
+          <h3>Red Bull TV</h3>
+          <p>Video and UI experiences across iOS and tvOS for Red Bull's global streaming audience.</p>
+          <ul class="tags"><li>iOS</li><li>tvOS</li><li>Video</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">TV · White-label</span>
+          <h3>Servus TV</h3>
+          <p>Initial white-label build of the Red Bull TV platform for a new broadcaster.</p>
+          <ul class="tags"><li>iOS</li><li>tvOS</li><li>White-label</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">News · Media</span>
+          <h3>USA Today</h3>
+          <p>Contributed to the original iPhone &amp; iPad release, building pieces like the signature news ticker.</p>
+          <ul class="tags"><li>iPhone</li><li>iPad</li><li>News</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">News · Performance</span>
+          <h3>Fox News</h3>
+          <p>Performance work on carousels and core UI to keep a high-traffic news app fast and smooth.</p>
+          <ul class="tags"><li>iOS</li><li>Performance</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Entertainment · Games</span>
+          <h3>Showtime &mdash; Dexter, Weeds &amp; more</h3>
+          <p>Built the trivia game and photo booth for the initial Dexter iPhone app, plus work across Showtime's early app slate.</p>
+          <ul class="tags"><li>iOS</li><li>Games</li><li>Camera</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Commerce · Frameworks</span>
+          <h3>Anthropologie · Free People · Urban Outfitters</h3>
+          <p>Designed a unified checkout framework shared across all three retail iOS apps.</p>
+          <ul class="tags"><li>iOS</li><li>Commerce</li><li>Frameworks</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Platform · Real-time</span>
+          <h3>Lawzam</h3>
+          <p>Legal consultation platform giving clients instant access to advice &mdash; built with Angular, React Native, OpenTok (WebRTC), Socket.IO, and Stripe.</p>
+          <ul class="tags"><li>WebRTC</li><li>React Native</li><li>Stripe</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Enterprise · Web</span>
+          <h3>Savealator</h3>
+          <p>Inventory management platform focused on regulated medical supplies.</p>
+          <ul class="tags"><li>Web</li><li>Inventory</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Infrastructure · Distribution</span>
+          <h3>builds.mercury.io</h3>
+          <p>Internal OTA platform for distributing beta builds to clients over the web &mdash; built before Apple or Google offered anything like it.</p>
+          <ul class="tags"><li>OTA</li><li>Web</li><li>Distribution</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Enterprise · Python</span>
+          <h3>Panasonic ROI Tool</h3>
+          <p>Internal Python web app for Panasonic Avionics sales to model airline pricing against service agreements.</p>
+          <ul class="tags"><li>Python</li><li>Web</li><li>Tooling</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Hardware · SDK</span>
+          <h3>Panasonic Seat-Backs</h3>
+          <p>AirPlay SDK running on Panasonic in-flight entertainment Android tablets.</p>
+          <ul class="tags"><li>Android</li><li>AirPlay</li><li>SDK</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">macOS · Audio</span>
+          <h3>ClickLoop Live</h3>
+          <p>A minimal macOS DAW built for a professional drummer &mdash; focused, low-latency, and stage-ready.</p>
+          <ul class="tags"><li>macOS</li><li>Audio</li><li>Real-time</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Micro-electronics · IoT</span>
+          <h3>Christmas Boxes</h3>
+          <p>Custom Raspberry Pi devices wired to 8-channel relays controlling 120V outlets, housed in laser-cut plexiglass.</p>
+          <ul class="tags"><li>Raspberry Pi</li><li>Relays</li><li>120V</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Mobile · Utility</span>
+          <h3>EPB</h3>
+          <p>Initial iOS application for the utility &amp; broadband provider.</p>
+          <ul class="tags"><li>iOS</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Mobile · Publishing</span>
+          <h3>The Word Among Us</h3>
+          <p>Initial iPad and iPhone apps for the devotional publisher.</p>
+          <ul class="tags"><li>iOS</li><li>iPad</li></ul>
+        </div>
+        <div class="work-card reveal">
+          <span class="cat">Culture · Media</span>
+          <h3>Smithsonian</h3>
+          <p>Initial app release bringing the institution's content to mobile.</p>
+          <ul class="tags"><li>iOS</li></ul>
+        </div>
+      </div>
+      <p class="work-note reveal">Details are intentionally light &mdash; happy to talk through any of these in a conversation.</p>
     </div>
   </section>
 
@@ -370,7 +539,7 @@
     <div class="wrap">
       <div class="card-cta reveal">
         <h2>Let's build something.</h2>
-        <p>Have a product that needs to shine on mobile, web, or the big screen? I'd love to hear about it.</p>
+        <p>Have an idea that needs to come to life &mdash; on mobile, web, TV, the desktop, or even a circuit board? I'd love to hear about it.</p>
         <div class="socials">
           <a class="social" href="https://www.linkedin.com/in/joe-ridenour/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
@@ -379,10 +548,6 @@
           <a class="social" href="https://github.com/flippinjoe" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 0 0 8.21 11.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub
-          </a>
-          <a class="social" href="https://codepen.io/flippinjoe" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M24 8.18c0-.06 0-.11-.01-.17l-.02-.09-.03-.09-.04-.09-.05-.08-.06-.08-.07-.07-.08-.06L12.33.1a.63.63 0 0 0-.66 0L.5 7.28l-.08.06-.07.07-.06.08-.05.08-.04.09-.03.09-.02.09c0 .06-.01.11-.01.17v7.64c0 .06 0 .11.01.17l.02.09.03.09.04.09.05.08.06.08.07.07.08.06 11.17 7.18a.63.63 0 0 0 .66 0l11.17-7.18.08-.06.07-.07.06-.08.05-.08.04-.09.03-.09.02-.09c.01-.06.01-.11.01-.17V8.18zM12 2.6l8.2 5.27-3.66 2.45L12 7.32V2.6zM7.46 7.87L11 5.42v4.9L7.46 7.87zm-1.1 1.05L3.7 10.7 1.9 9.5l4.46-2.98v2.4zm-2.66 3.03l-2.6-1.74v3.48l2.6-1.74zm1.1 1.05l4.46 2.98v-2.4L4.8 12.29v.71zm5.56 3.7L2.9 15.5l3.66-2.45L11 15.68v4.72l-.34-.7zm1.28 0V15.68l4.44-2.63 3.66 2.45-7.76 4.97-.34-.19zm5.66-4.75l2.6 1.74v-3.48l-2.6 1.74zm-1.1-1.05l-4.46-2.98v2.4l4.46 2.98v-2.4z"/></svg>
-            CodePen
           </a>
           <a class="social" href="https://twitter.com/flippnjoe" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 6.23 5.46-6.23zm-1.16 17.52h1.83L7.01 4.13H5.05l12.03 15.64z"/></svg>
