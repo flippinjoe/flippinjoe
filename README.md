@@ -39,7 +39,7 @@
 
 ### 🚀 Things I'm building
 
-**📣 [Cheer Studio](https://cheerstudios.pro)** — iOS · macOS · Android · Web
+**📣 [Cheer Studio](https://cheerstudio.pro)** — iOS · macOS · Android · Web
 A routine choreography and team-management platform for competitive cheerleading. Design formations on a true-to-scale floor with a rigged 3D athlete model, sync music, manage teams and athletes, and track skills against the scoring rules of every major governing body — all sharing one canonical data model across native apps and the web.
 <sub>`SwiftUI` `SceneKit` `Kotlin/Compose` `Next.js` `PayloadCMS` `Blender/glTF`</sub>
 
