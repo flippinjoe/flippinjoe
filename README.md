@@ -10,6 +10,7 @@
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/joe-ridenour/)
 [![Twitter Badge](https://img.shields.io/badge/Twitter-Profile-informational?style=flat&logo=x&logoColor=white&color=000000)](https://twitter.com/flippnjoe)
 [![CodePen Badge](https://img.shields.io/badge/CodePen-Profile-informational?style=flat&logo=codepen&logoColor=white&color=black)](https://codepen.io/flippinjoe)
+[![Buy Me A Coffee Badge](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-informational?style=flat&logo=buymeacoffee&logoColor=black&color=FFDD00)](https://buymeacoffee.com/flippnjoe)
 
 ---
 
@@ -80,8 +81,16 @@ Names are under wraps, but here's the shape of it:
 
 ---
 
+### ☕ Support the work
+
+Most of what I build on the side — apps, templates, experiments — is made in the margins of the day. If something here helped you out or you just want to keep the side projects shipping, a coffee goes a long way.
+
+**[☕ Buy me a coffee](https://buymeacoffee.com/flippnjoe)**
+
+---
+
 ### 📫 Let's build something
 
 Have an idea that needs to come to life — on mobile, web, TV, the desktop, or even a circuit board? I'd love to hear about it.
 
-**[joesapps.net](https://joesapps.net)** · **[LinkedIn](https://www.linkedin.com/in/joe-ridenour/)** · **[X / Twitter](https://twitter.com/flippnjoe)**
+**[joesapps.net](https://joesapps.net)** · **[LinkedIn](https://www.linkedin.com/in/joe-ridenour/)** · **[X / Twitter](https://twitter.com/flippnjoe)** · **[Buy me a coffee](https://buymeacoffee.com/flippnjoe)**
